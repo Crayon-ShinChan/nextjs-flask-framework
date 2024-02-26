@@ -12,13 +12,13 @@ const Home: React.FC = () => {
   const [message, setMessage] = useState("");
   useEffect(() => {
     // Fetch data from the API endpoint
-    fetch("/testapi/hello")
+    fetch("/api/hello")
       .then((res) => res.json()) // Parse the JSON response
       .then((data) => {
         setMessage(data.message); // Set the message in state
       })
       .catch((error) => {
-        console.error("Failed to fetch data from '/testapi/hello':", error);
+        console.error("Failed to fetch data from '/api/hello':", error);
         setMessage("Failed to fetch message");
       });
   }, []); // The empty array ensures this effect runs once on mount
